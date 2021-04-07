@@ -1,6 +1,6 @@
 # Tomcat
 server:
-  port: 8061
+  port: 8080
 
 spring:
   profiles:
@@ -10,17 +10,17 @@ spring:
 #mybatis
 mybatis-plus:
   mapper-locations: classpath:mapping/mysql/**/*.xml
-  typeAliasesPackage: com.cn.gaokao.pojo.entity.mybatis,com.cn.gaokao.pojo.entity.mybatisplus
+  typeAliasesPackage: com.casic.lbac.pojo.entity.mybatis,com.casic.lbac.pojo.entity.mybatisplus
   global-config:
-    #Ö÷¼üÀàĞÍ  0:"Êı¾İ¿âID×ÔÔö", 1:"ÓÃ»§ÊäÈëID",2:"È«¾ÖÎ¨Ò»ID (Êı×ÖÀàĞÍÎ¨Ò»ID)", 3:"È«¾ÖÎ¨Ò»ID UUID";
+    #ä¸»é”®ç±»å‹  0:"æ•°æ®åº“IDè‡ªå¢", 1:"ç”¨æˆ·è¾“å…¥ID",2:"å…¨å±€å”¯ä¸€ID (æ•°å­—ç±»å‹å”¯ä¸€ID)", 3:"å…¨å±€å”¯ä¸€ID UUID";
     id-type: 0
-    #×Ö¶Î²ßÂÔ 0:"ºöÂÔÅĞ¶Ï",1:"·Ç NULL ÅĞ¶Ï"),2:"·Ç¿ÕÅĞ¶Ï"
+    #å­—æ®µç­–ç•¥ 0:"å¿½ç•¥åˆ¤æ–­",1:"é NULL åˆ¤æ–­"),2:"éç©ºåˆ¤æ–­"
     field-strategy: 2
-    #ÍÕ·åÏÂ»®Ïß×ª»»
+    #é©¼å³°ä¸‹åˆ’çº¿è½¬æ¢
     db-column-underline: true
-    #Ë¢ĞÂmapper µ÷ÊÔÉñÆ÷
+    #åˆ·æ–°mapper è°ƒè¯•ç¥å™¨
     refresh-mapper: true
-    #Âß¼­É¾³ıÅäÖÃ
+    #é€»è¾‘åˆ é™¤é…ç½®
     logic-delete-value: -1
     logic-not-delete-value: 0
   configuration:
