@@ -1,4 +1,4 @@
-package com.cn.gaokao.pojo;
+package com.cn.gaokao.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
