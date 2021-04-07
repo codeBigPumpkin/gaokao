@@ -32,7 +32,3 @@ spring:
         wall:
           config:
             multi-statement-allow: true
-
-swagger:
-  base-package: com.cn.gaokao.controller
-  enabled: true

@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@MapperScan("com.cn.platform.mapper")
+@MapperScan("com.cn.gaokao.mapper")
 @EnableScheduling
 public class GaokaoApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
