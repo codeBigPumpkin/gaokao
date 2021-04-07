@@ -1,4 +1,4 @@
-package com.il.li.gaokao.controller;
+package com.cn.gaokao.controller;
 
 import org.springframework.stereotype.Controller;
 

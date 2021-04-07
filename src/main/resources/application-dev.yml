@@ -1,0 +1,213 @@
+spring:
+  mvc:
+    pathmatch:
+      use-suffix-pattern: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.16.193:3306/safetyplatform?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useTimezone=true&serverTimezone=GMT%2B8
+    username: root
+    password: 1qaz@WSX
+    druid:
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true
+  redis:
+    open: false  # 是否开启redis缓存  true开启   false关闭
+    database: 2
+    host: 172.16.16.193
+    port: 6379
+    password: 1qaz@WSX   # 密码（默认为空）
+    timeout: 6000ms  # 连接超时时长（毫秒）
+    jedis:
+      pool:
+        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10      # 连接池中的最大空闲连接
+        min-idle: 5       # 连接池中的最小空闲连接
+
+#用于区分dockerfile
+envName: dev
+
+#token过滤器不
+exceptUrls: /VerCode/**,/Login/doLogin,/Login/iamLogin,/Main/**,/swagger-,/webjars/**,/v2/api-docs
+
+swagger:
+  base-package: com.casic.lbac.controller
+  enabled: true
+
+syslog:
+  ip: 172.16.16.240
+  port: 2514
+  udpport: 2514
+
+proxy:
+  baseurl: http://172.16.16.240:20340
+  servlet:
+    rediskey: "cloudproxy:code:"
+
+iam:
+  aeskey: lh8q68X815Ao2QCs
+  psId: ztbcas4
+  server: 192.168.12.253:8091/cas
+  clientId: 25a0e08d497a4325b43de4d33c647dba
+  clientSecret: 56EC40C8D22240038A118152ED05E8EA
+  key: 1a2ef144e8974583
+  appId: 0000cas35
+  loginurl: http://192.168.12.253:8091/single_Login?appUuid=142fd3c212c311eb908a0242ac110003
+
+appIds: "{\"home\":\"ztbcas4\",\"data\":\"ztbcas9\",\"bigdata\":\"ztbcas10\",\"rs_metering\":\"ztbcas12\",\"use_metering\":\"ztbcas11\",\"network_work_order\":\"ztbcas13\",\"csmp\":\"ztbcas20\"}"
+
+logsecuritydir: /var/log/ETPlatform/ETPlatform-api
+logdir: /usr/local/share/slog
+logArchivedir: /usr/local/share/tarlog
+
+#网址安全代理
+nginxConfPath: /etc/nginx/nginx.conf
+
+#时速云,组件新增删除相关
+docker:
+  distpath: /usr/local/share/dists
+  dockerfilepath: /usr/local/share/tem
+  components:
+    address: /usr/local/share/components
+    runtime: /usr/local/share/dockerNeed
+    other: /usr/local/share/components-other
+  server:
+    ip: 192.168.12.114
+    username: root
+    password: yanfa123..com
+    port: 22
+  #        visit:
+  #            ip: 192.168.12.114
+  function:
+    port: 2375
+  environment: cloud
+  image:
+    tag:
+      arch: amd64
+  cloud:
+    ip: 192.168.12.238
+    images:
+      ip: 192.168.12.238
+    visit:
+      ip: 192.168.12.232
+    port: 18080
+    server:
+      ip: 192.168.12.238
+      port: 80
+    project:
+      name: demo-test
+    warehouse:
+      group:
+        name: safety_of_china
+    username: niufeifan
+    #        password: !QAZ2wsx
+    token: ijalkpbhnfdbqxdnahnvxngplnitraajkuktoqmhmyjvuhvp
+    ipv4pools: 172.31.0.0/16
+    #        schema:
+    #            port:
+    #                name: system/schemaPortname
+    export:
+      id: group-bzqtq
+    common:
+      image:
+        name: nginx
+        version: 1.17.9
+    senschk:
+      image:
+        name: senschk
+        version: v1.0
+    source:
+      check:
+        image:
+          name: sourcecheck
+          version: v1.0
+    rasp:
+      image:
+        name: rasp
+        version: v1.0
+    net:
+      analyze:
+        image:
+          name: netanalyze
+          version: v1.0
+
+cloudproxy:
+  #    url:
+  #        add: http://172.16.16.240:20046/dashboard/info-cloud-proxy/add_servlet_proxy
+  #        delete: http://172.16.16.240:20046/dashboard/info-cloud-proxy/delete_servlet_proxy
+  scheme: http
+  innerdocker:
+    server: 192.168.12.232
+
+
+#服务接口
+serverinstance:
+  server:
+    ip: 10.14.33.38
+    port: 80
+    path: /usr/local/share
+  api:
+    senschkport: 12633
+    watermarkport: 8805
+    watermarkip: 192.168.12.114
+
+
+#北向接口
+csmp:
+  api:
+    host: 192.168.5.34
+    client:
+      id: mPFYBO0cGoVMm-H-V_p1VOCzylb_fJbl
+  username: cuijinxing
+  userpass: xing008140
+  client:
+    secret: c56271dd7bae64ec
+  wzfhVmid: b6e2c725-2695-44b2-bd1f-f5fd227bf7a6
+  sjfxlVmid: e6a3f45a-4436-4276-834f-220abdf62be8
+  rzsjVmid: 37f4a142-fdbe-4d51-bdb6-4fc1420bc86b
+  fhqzhVmid: ca72c53d-e736-444e-9cf2-82a1ccc0bf54
+  tsgzVmid: c7d19d62-bda7-4abc-874e-fb511496be08
+  sjksjVmid: cf863e5f-b697-4d65-a551-164675a2c223
+  zhfhqzqVmid: 0fce440b-0b84-4b92-a461-55ee8e7ab31b
+  wdlzjVmid: c3d2a6f8-b7d6-48ec-beee-3ab3d27556b4
+  zhldsmVmid: 005c5435-4522-4642-a5ef-6a13e657828c
+  bljVmid: fba52a85-750f-4456-853a-d14fa6f09e6f
+
+#惠盾接口
+smart_securi:
+  api:
+    host: smartsecuri.f3322.net
+    port: 23225
+
+#特征库
+feature:
+  library:
+    address: /usr/local/fl_package
+
+#终端用户登录
+loginServerIpPort: 192.168.12.114:8070
+
+kafka:
+  host: 172.16.16.187:9092

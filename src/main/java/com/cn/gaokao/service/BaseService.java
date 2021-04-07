@@ -1,6 +1,6 @@
-package com.il.li.gaokao.service;
+package com.cn.gaokao.service;
 
-import com.il.li.gaokao.dao.BaseDao;
+import com.cn.gaokao.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

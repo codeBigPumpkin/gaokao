@@ -1,4 +1,4 @@
-package com.il.li.gaokao.dao;
+package com.cn.gaokao.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
