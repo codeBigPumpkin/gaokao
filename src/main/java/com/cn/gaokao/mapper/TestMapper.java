@@ -1,14 +1,10 @@
 package com.cn.gaokao.mapper;
 
-
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cn.gaokao.pojo.DspSystemConfig;
 
-import java.util.List;
+import java.util.Map;
 
-/**
- * @author yanyan
- */
 public interface TestMapper extends BaseMapper<DspSystemConfig> {
-    List selectAllfdfs();
+    Map selectAllfdfs();
 }

@@ -14,9 +14,6 @@ import org.springframework.stereotype.Component;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * @author yanyan
- */
 @Slf4j
 @Component
 public class TestServiceImpl implements ITestService {
@@ -43,7 +40,7 @@ public class TestServiceImpl implements ITestService {
     }
 
     @Override
-    public List selectAll() {
+    public Map selectAll() {
         return testMapper.selectAllfdfs();
     }
 }

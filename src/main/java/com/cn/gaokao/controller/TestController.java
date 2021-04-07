@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
-/**
- * @author yanyan
- */
 @RestController
 @RequestMapping("systemConfig")
 @Api(tags = "系统配置")
@@ -34,13 +31,11 @@ public class TestController {
 
     @GetMapping("getSecurityScreenConfigById")
     public Object getSecurityScreenConfigById() {
-
         return testService.getSecurityScreenConfigById();
     }
 
     @GetMapping("selectAll")
     public Object selectAll() {
-
         return testService.selectAll();
     }
 }
