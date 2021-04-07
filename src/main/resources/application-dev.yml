@@ -53,7 +53,7 @@ envName: dev
 exceptUrls: /VerCode/**,/Login/doLogin,/Login/iamLogin,/Main/**,/swagger-,/webjars/**,/v2/api-docs
 
 swagger:
-  base-package: com.casic.lbac.controller
+  base-package: com.cn.gaokao.controller
   enabled: true
 
 syslog:
