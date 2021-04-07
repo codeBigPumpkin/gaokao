@@ -220,3 +220,20 @@ CREATE TABLE `tbl_video_info` (
 -- ----------------------------
 -- Records of tbl_video_info
 -- ----------------------------
+
+
+--测试表
+CREATE TABLE `dsp_system_config` (
+  `id` int(4) NOT NULL AUTO_INCREMENT COMMENT '主键id配置编号',
+  `dsp_cfg_code` varchar(100) DEFAULT NULL COMMENT '配置编码',
+  `dsp_cfg_name` varchar(100) DEFAULT NULL COMMENT '配置名称',
+  `dsp_cfg_desc` varchar(100) DEFAULT NULL COMMENT '配置描述',
+  `dsp_cfg_value_type` varchar(50) DEFAULT NULL COMMENT '配置值类型，比如integer（整数）、html（HTML）等bool（是否），不同的值类型可以通过不同的表单来显示和编辑',
+  `dsp_cfg_value` varchar(100) DEFAULT NULL COMMENT '配置值',
+  `dsp_cfg_state` int(4) DEFAULT NULL COMMENT '配置状态（-1：已删除；0：禁用；1：启用）',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='系统配置';
+--测试数据
+insert into `dsp_system_config` (`id`, `dsp_cfg_code`, `dsp_cfg_name`, `dsp_cfg_desc`, `dsp_cfg_value_type`, `dsp_cfg_value`, `dsp_cfg_state`) values('1','iam_ip','iam系统IP','iam系统ip','字符串','192.168.12.253','1');
+insert into `dsp_system_config` (`id`, `dsp_cfg_code`, `dsp_cfg_name`, `dsp_cfg_desc`, `dsp_cfg_value_type`, `dsp_cfg_value`, `dsp_cfg_state`) values('2','iam_port','iam系统端口','iam系统后端端口','字符串','8091','1');
+insert into `dsp_system_config` (`id`, `dsp_cfg_code`, `dsp_cfg_name`, `dsp_cfg_desc`, `dsp_cfg_value_type`, `dsp_cfg_value`, `dsp_cfg_state`) values('3','iam_context','iam上下文','iam访问上下文','字符串','cas','1');
