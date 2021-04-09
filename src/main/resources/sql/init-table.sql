@@ -43,7 +43,8 @@ CREATE TABLE `tbl_college_profession` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `college_id` int(11) DEFAULT NULL COMMENT '学校id',
   `profession_id` int(11) DEFAULT NULL COMMENT '专业id',
-  `feature` varchar(255) DEFAULT NULL COMMENT '学校专业特色'
+  `feature` varchar(255) DEFAULT NULL COMMENT '学校专业特色',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -107,7 +108,7 @@ INSERT INTO `tbl_profession` VALUES ('2', null, '专科专业', null, '0');
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_province_college_score`;
 CREATE TABLE `tbl_province_college_score` (
-  `id` int(11) DEFAULT NOT NULL AUTO_INCREMENT,
+  `id` int(11)  NOT NULL AUTO_INCREMENT,
   `year` int(11) DEFAULT NULL COMMENT '年份',
   `province` varchar(64) DEFAULT NULL COMMENT '省份',
   `batch` varchar(64) DEFAULT NULL COMMENT '批次(提前批/第一批/第二批/高职等)',
@@ -118,7 +119,8 @@ CREATE TABLE `tbl_province_college_score` (
   `profession_score` int(11) DEFAULT NULL COMMENT '学校专业录取分数',
   `plan_count` int(11) DEFAULT NULL COMMENT '学校计划招生人数',
   `actual_count` int(11) DEFAULT NULL COMMENT '实际招生人数',
-  `ishistory` bit(1) DEFAULT NULL COMMENT '是否历史'
+  `ishistory` bit(1) DEFAULT NULL COMMENT '是否历史',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -130,13 +132,14 @@ CREATE TABLE `tbl_province_college_score` (
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_province_score`;
 CREATE TABLE `tbl_province_score` (
-  `id` int(11) DEFAULT NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `year` int(11) DEFAULT NULL COMMENT '年份',
   `province` varchar(64) DEFAULT NULL COMMENT '省份',
   `batch` varchar(64) DEFAULT NULL COMMENT '批次(提前批/第一批/第二批/高职等)',
   `type` varchar(64) DEFAULT NULL COMMENT '类型(理科\\文科\\艺术\\体育)',
   `score` int(11) DEFAULT NULL COMMENT '分数线',
-  `ishistory` bit(1) DEFAULT NULL COMMENT '是否历史'
+  `ishistory` bit(1) DEFAULT NULL COMMENT '是否历史',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -182,7 +185,7 @@ CREATE TABLE `tbl_user_info` (
   `provice` varchar(64) DEFAULT NULL,
   `score` int(11) DEFAULT NULL COMMENT '分数',
   `type` varchar(255) DEFAULT NULL COMMENT '考生类型(理科/文科/艺术/体育)',
-  PRIMARY KEY (`phone`)
+  PRIMARY KEY (`id`,`phone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

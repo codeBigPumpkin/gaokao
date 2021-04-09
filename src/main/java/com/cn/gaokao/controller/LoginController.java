@@ -33,7 +33,7 @@ public class LoginController {
     public Result login(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password,
                         HttpServletRequest request, HttpServletResponse response) {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(User::getName, username).or(e -> e.eq(User::getPhone, username));
+        queryWrapper.lambda().eq(User::getName, username).or().eq(User::getPhone, username);
         User user = loginMapper.selectOne(queryWrapper);
         if (user != null) {
             if (password.equals(user.getUserpwd())) {
