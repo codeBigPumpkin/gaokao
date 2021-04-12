@@ -61,6 +61,7 @@ public class WxPayController {
         wxPayConfigStorage.setReturnUrl("同步回调地址");
         wxPayConfigStorage.setSignType("签名方式");
         wxPayConfigStorage.setInputCharset("utf-8");
+        wxPayConfigStorage.setTest(false); //沙箱 or 正式
 
 
         service = new WxPayService(wxPayConfigStorage);
