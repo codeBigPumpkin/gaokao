@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .pathMapping("/")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.cn.gaokao.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.cn.gaokao"))
                 .paths(PathSelectors.any())
                 .build().apiInfo(
                         new ApiInfoBuilder()

@@ -1,0 +1,18 @@
+package com.cn.gaokao.pay.wx.api;
+
+import java.util.Date;
+import java.util.Map;
+
+/**
+ * 账单接口
+ *
+ * @author faymanwang
+ * email: 1057438332@qq.com
+ * time: 2020/7/31 11:21
+ */
+public interface WxBillService {
+
+    @Deprecated
+    Map<String, Object> downloadbill(Date billDate, String billType, String path);
+
+}
